@@ -1,28 +1,28 @@
 Help pagina
 
 WHAT:
-		log makes it possible to quicly make notes of what u are doing 
+		QuickNotes (qn) makes it possible to quicly make notes of what u are doing
 		and storing these notes, chronologicaly in a file.
 
 		When u use the command correctly for the first time:
-		'log first_log' a file called first_log.log will be made in ~/.logs 
-		After that running 'log first_log', you will be using the file u made the first time 
+		'qn first_note' a file called first_note will be made in ~/.QuickNotes
+		After that running 'qn first_note', you will be using the file u made the first time
 
 SYNTAX:
-		log [FILE] [OPTION]
+		qn [FILE] [OPTION]
 		Only use 1 file at a time!
 
 OPTIONS: (also always just 1)
-		Geen opties 	Dit laat je kort je gedachten noteren, te loggen. 
-				Bij afsluiten word je log aan het volledige log-file toegevoegd.
+		Geen opties 	Dit laat je kort je gedachten noteren, te loggen.
+				Bij afsluiten word je notitie aan het volledige note-file toegevoegd.
 
-		-e 		Hiermee kan je je log-file editen.
-		
+		-e 		Hiermee kan je je note-file editen.
+
 	 	-ne		Dit is de combo van geen opties en -e.
-	 	 		Je kan dus kort een log schrijven en je volledige log-file aanpassen.
+	 	 		Je kan dus kort een note schrijven en je volledige note-file aanpassen.
 
-	 	-s 		Dit laat je toe je log-file te bekijken met less.
-	 	
-	 	-S 		Dit laat je toe al je gemaakte log-files te bekijken.
-	 	
-	 	-d 		Dit verwijdert je log-file voorgoed.
+	 	-s 		Dit laat je toe je note-file te bekijken met less.
+
+	 	-S 		Dit laat je toe al je gemaakte note-files te bekijken.
+
+	 	-d 		Dit verwijdert je note-file voorgoed.

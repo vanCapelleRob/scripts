@@ -1,30 +1,30 @@
 #!/bin/sh
 
 ## functions ##
-log_help(){
+qn_help(){
 	less $path/.help
 	exit
 }
 
-log_edit(){
+qn_edit(){
 	nano $file
 }
 
-log_show_all(){
+qn_show_all(){
 	ls $path
 	exit
 }
 
-log_show(){
+qn_show(){
 	less $file
 }
 
-log_delete(){
-	echo -e "Zeker dat je deze log file wil deleten? Ze zal nergens meer te vinden zijn...  \n"
+qn_delete(){
+	echo -e "Zeker dat je deze file wil deleten? Ze zal nergens meer te vinden zijn...  \n"
 	rm -i $file
 }
 
-log_new_edit(){
+qn_new_edit(){
 	echo "========== [" $when "] ==========" >>  $tempfile
 	echo -e "\n" >> $tempfile
 	cp $file $file"2"
@@ -33,7 +33,7 @@ log_new_edit(){
 	rm $file"2" $tempfile
 }
 
-log_normal(){
+qn_normal(){
 	echo "========== [" $when "] ==========" >>  $tempfile
 	nano $tempfile
 	echo -e >> $tempfile
@@ -45,27 +45,27 @@ log_normal(){
 
 ## main code ##
 userHome="$HOME"
-path="$userHome/.logs"
+path="$userHome/.QuickNotes"
 
 
-file=$path/$1.log
-tempfile=$path/$1.temp.log
+file=$path/$1
+tempfile=$path/$1.temp
 when=$(date +"%A-%d/%m/%Y-%H:%M")
 
 if [ ! -z $1 ]; then
 	case $1 in
 		help)
-			log_help
+			qn_help
 			;;
-		-S)	
-			log_show_all
+		-S)
+			qn_show_all
 			;;
 		*)
-			[ ! -f $path/$1.log  ] && touch $path/$1.log
+			[ ! -f $path/$1  ] && touch $path/$1
 			;;
 	esac
 else
-	echo "Geef naam van logfile in."
+	echo "Geef naam van file in."
 	exit
 fi
 
@@ -73,18 +73,18 @@ fi
 if [ ! -f $2  ]; then
 	case $2 in
 		-e)
-			log_edit $1
+			qn_edit $1
 			;;
-		-s)	
-			log_show $1
+		-s)
+			qn_show $1
 			;;
 		-ne)
-			log_new_edit $1
+			qn_new_edit $1
 			;;
 		-d)
-			log_delete $1
+			qn_delete $1
 			;;
 	esac
 else
-	log_normal $1
+	qn_normal $1
 fi

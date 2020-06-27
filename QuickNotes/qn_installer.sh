@@ -8,8 +8,8 @@ sudo chmod 755 $destPath/qn
 
 
 #places the .help page in $HOME/.QuickNotes/.help
-qnDir="$HOME/.QuickNotes"
-mkdir $qnDir && echo "made dir" || echo "didnt make dir"
+qnDir="/home/$USER/.QuickNotes"
+mkdir $qnDir
 sudo chown $USER:$USER $qnDir
 sudo wget -O $qnDir/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/help
 

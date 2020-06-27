@@ -12,4 +12,8 @@ or
 
 > sudo curl -LO https://raw.githubusercontent.com/vanCapelleRob/scripts/master/log/log_installer.sh
 
+<<<<<<< HEAD
 > sudo sh log_installer
+=======
+> sudo sh log_installer.sh
+>>>>>>> 5c5203e049e1372ed49c5fe642a6c2d656f50ab3

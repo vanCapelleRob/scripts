@@ -22,7 +22,7 @@ is_user(){
 #places the .help page in $HOME/.QuickNotes/.help
 if [ ! -z $1 ]; then
 	echo $USER
-	if [ '$USER' = 'root' ]; then
+	if [ $USER = 'root' ]; then
 		is_root $1
 	else
 		exit

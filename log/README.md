@@ -12,8 +12,30 @@ or
 
 > sudo curl -LO https://raw.githubusercontent.com/vanCapelleRob/scripts/master/log/log_installer.sh
 
-<<<<<<< HEAD
-> sudo sh log_installer
-=======
 > sudo sh log_installer.sh
->>>>>>> 5c5203e049e1372ed49c5fe642a6c2d656f50ab3
+
+## What happens
+A file /usr/local/bin/log will be made. This file makes it all possible
+
+A folder ~/.logs will be created. This is where all your logs will be stored.
+
+The log_installer(.sh) will be deleted after installation.
+
+## How it works
+Simply type
+
+> log help
+
+in a terminal and it will tell you how to work with it.
+
+Basically, just typing
+
+> log myLog
+
+will allow you to quicly write down what's on your mind, or what you need to remmember for later in a project.
+
+Never add the .log extention when using the command. It will create a new log file.
+
+## Be aware
+If there is a new feature that might seem handy or makes the workflow better, you can always add it or contact me!
+I will also update this page if i added something

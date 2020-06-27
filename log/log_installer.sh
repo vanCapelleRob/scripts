@@ -13,3 +13,6 @@ logDir="$HOME/.logs"
 user=whoami
 sudo chown $user:$user $logDir
 sudo wget -O $logDir/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/log/help
+
+#destroys the installation file
+rm log_installer*

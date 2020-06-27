@@ -8,10 +8,10 @@ sudo chmod 755 $destPath/qn
 
 
 #places the .help page in $HOME/.QuickNotes/.help
-mkdir $HOME/.QuickNotes
-logDir="$HOME/.QuickNotes"
-sudo chown $USER:$USER $logDir
-sudo wget -O $logDir/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/help
+qnDir="$HOME/.QuickNotes"
+mkdir $qnDir
+sudo chown $USER:$USER $qnDir
+sudo wget -O $qnDir/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/help
 
 #destroys the installation file
 rm qn_installer*

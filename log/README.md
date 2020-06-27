@@ -12,4 +12,4 @@ or
 
 > sudo curl -LO https://raw.githubusercontent.com/vanCapelleRob/scripts/master/log/log_installer.sh
 
-> sudo sh log_installer
+> sudo sh log_installer.sh

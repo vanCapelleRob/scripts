@@ -24,6 +24,7 @@ if [ ! -z $1 ]; then
 	if [ '$USER' = 'root' ]; then
 		is_root $1
 	else
+		echo $USER
 		exit
  		is_user
 	fi

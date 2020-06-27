@@ -6,10 +6,29 @@ destPath="/usr/local/bin"
 sudo wget -O $destPath/qn https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn
 sudo chmod 755 $destPath/qn
 
+#on manjaro, $USER changes to root, Ubuntu not.
+is_root(){
+	qnDir="/home/$1/.QuickNotes"
+	mkdir $qnDir
+	sudo chown $1:$1 $qnDir
+}
+
+is_user(){
+	qnDir="/home/$USER/.QuickNotes"
+	mkdir $qnDir
+	sudo chown $USER:$USER $qnDir
+}
 
 #places the .help page in $HOME/.QuickNotes/.help
-[ ! -z $1 ] && [ '$USER' = 'root' ] && qnDir="/home/$1/.QuickNotes" ; mkdir $qnDir ; sudo chown $1:$1 $qnDir || qnDir="/home/$USER/.QuickNotes" ; mkdir $qnDir ; sudo chown $USER:$USER $qnDir 
-
+if [ ! -z $1 ]; then
+	if [ '$USER' = 'root' ]; then
+		is_root
+	else
+ 		is_user
+	fi
+else
+	is_user
+fi
 
 sudo wget -O $qnDir/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/help
 

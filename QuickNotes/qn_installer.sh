@@ -1,5 +1,8 @@
 #!/bin/sh
 
+qnDir="/home/$LOGNAME/.QuickNotes"
+mkdir $qnDir
+
 #places the qn file in /usr/local/bin
 destPath="/usr/local/bin"
 
@@ -8,8 +11,7 @@ sudo chmod 755 $destPath/qn
 
 
 #places the .help page in $HOME/.QuickNotes/.help
-qnDir="/home/$LOGNAME/.QuickNotes"
-mkdir $qnDir
+
 sudo chown $LOGNAME:$LOGNAME $qnDir
 sudo wget -O $qnDir/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/help
 

@@ -8,11 +8,20 @@ run
 
 > sudo sh qn_installer
 
+I don't know why but on manjaro use
+
+> sudo sh qn_installer login_name
+
+
 or
 
 > sudo curl -LO https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn_installer.sh
 
 > sudo sh qn_installer.sh
+
+I don't know why but on manjaro use
+
+> sudo sh qn_installer.sh login_name
 
 ## What happens
 A file /usr/local/bin/qn will be made. This file makes it all possible

@@ -10,7 +10,7 @@ run
 
 I don't know why but on manjaro use
 
-> sudo sh qn_installer login_name
+> sudo sh qn_installer your_login_name
 
 
 or
@@ -21,7 +21,7 @@ or
 
 I don't know why but on manjaro use
 
-> sudo sh qn_installer.sh login_name
+> sudo sh qn_installer.sh your_login_name
 
 ## What happens
 A file /usr/local/bin/qn will be made. This file makes it all possible

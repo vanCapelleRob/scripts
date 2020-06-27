@@ -44,8 +44,8 @@ log_normal(){
 
 
 ## main code ##
-
-path="/home/admin/.logs"
+userHome="$HOME"
+path="$userHome/.logs"
 
 
 file=$path/$1.log

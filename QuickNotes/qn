@@ -42,14 +42,15 @@ qn_normal(){
 	rm $file"2" $tempfile
 }
 
-
-#assign_dir(){
-#		mkdir $1 && 
-#		export qn_path=$1 	
-#}
+assign_dir(){
+		mkdir $1 && 
+		cp ~/.bashrc $1 &&
+		echo "export qn_path=$1" >> ~/.bashrc &&
+		echo "Made dir $1, made a copy of .bashrc, and stored it in $1. And exported qn_path=$1 onto .bashrc"
+}
 
 ## main code ##
-path="/usr/local/bin/"
+path=$qn_path
 file=$path/$1
 tempfile=$path/$1.temp
 when=$(date +"%A-%d/%m/%Y-%H:%M")

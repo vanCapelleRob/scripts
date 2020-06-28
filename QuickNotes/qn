@@ -7,7 +7,7 @@ qn_help(){
 }
 
 qn_edit(){
-	nano $file
+	$EDITOR $file
 }
 
 qn_show_all(){
@@ -20,7 +20,7 @@ qn_show(){
 }
 
 qn_delete(){
-	echo -e "Zeker dat je deze file wil deleten? Ze zal nergens meer te vinden zijn...  \n"
+	echo -e "Are you sure you want to delete this note?  \n"
 	rm -i $file
 }
 
@@ -29,13 +29,13 @@ qn_new_edit(){
 	echo -e "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" > $file
-	nano $file
+	$EDITOR $file
 	rm $file"2" $tempfile
 }
 
 qn_normal(){
 	echo "========== [" $when "] ==========" >>  $tempfile
-	nano $tempfile
+	$EDITOR $tempfile
 	echo -e >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" >  $file
@@ -43,11 +43,13 @@ qn_normal(){
 }
 
 
+#assign_dir(){
+#		mkdir $1 && 
+#		export qn_path=$1 	
+#}
+
 ## main code ##
-userHome="$HOME"
-path="$userHome/.QuickNotes"
-
-
+path="/usr/local/bin/"
 file=$path/$1
 tempfile=$path/$1.temp
 when=$(date +"%A-%d/%m/%Y-%H:%M")
@@ -60,12 +62,16 @@ if [ ! -z $1 ]; then
 		-S)
 			qn_show_all
 			;;
+		'-dir')
+			[ ! -d $2 ] && assign_dir $2 ||
+			echo 'dir already exists'
+			;;
 		*)
 			[ ! -f $path/$1  ] && touch $path/$1
 			;;
 	esac
 else
-	echo "Geef naam van file in."
+	echo "Give a filename"
 	exit
 fi
 

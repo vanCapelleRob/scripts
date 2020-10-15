@@ -2,12 +2,12 @@
 
 ## functions ##
 qn_help(){
-	less $path/.help
+	less '/usr/local/bin/.help'
 	exit
 }
 
 qn_edit(){
-	$EDITOR $file
+	nano $file
 }
 
 qn_show_all(){
@@ -29,13 +29,13 @@ qn_new_edit(){
 	echo -e "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" > $file
-	$EDITOR $file
+	nano $file
 	rm $file"2" $tempfile
 }
 
 qn_normal(){
 	echo "========== [" $when "] ==========" >>  $tempfile
-	$EDITOR $tempfile
+	nano $tempfile
 	echo -e >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" >  $file
@@ -50,7 +50,8 @@ assign_dir(){
 }
 
 ## main code ##
-path=$qn_path
+# path=$qn_path
+path='/home/'$USER'/.quickNotes'
 file=$path/$1
 tempfile=$path/$1.temp
 when=$(date +"%A-%d/%m/%Y-%H:%M")
@@ -68,7 +69,7 @@ if [ ! -z $1 ]; then
 			echo 'dir already exists'
 			;;
 		*)
-			[ ! -f $path/$1  ] && touch $path/$1
+			[ ! -f $path/$1  ] && touch $file
 			;;
 	esac
 else

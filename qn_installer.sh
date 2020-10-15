@@ -5,6 +5,10 @@ destPath="/usr/local/bin"
 
 sudo wget -O $destPath/qn https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn
 sudo chmod 755 $destPath/qn
+sudo chown $USER:$USER $destPath/qn
+
+mkdir /home/$USER/.quickNotes
+
 
 #on manjaro, $USER changes to root, Ubuntu not.
 #is_root(){

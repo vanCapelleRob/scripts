@@ -12,17 +12,17 @@ SYNTAX:
 		qn [FILE] [OPTION]
 		Only use 1 file at a time!
 
-OPTIONS: (also always just 1)
-		Geen opties 	Dit laat je kort je gedachten noteren, te loggen.
-				Bij afsluiten word je notitie aan het volledige note-file toegevoegd.
+OPTIONS: (also always use 1)
+		No options 	Simply write down your thoughts in a file.
+				After closing your note will be added to the full note-file.
 
-		-e 		Hiermee kan je je note-file editen.
+		-e 		Edit your note-file.
 
-	 	-ne		Dit is de combo van geen opties en -e.
-	 	 		Je kan dus kort een note schrijven en je volledige note-file aanpassen.
+	 	-ne		This is a combination of No options and -e.
+	 	 		You can write a note and at the same time edit your whole note-file.
 
-	 	-s 		Dit laat je toe je note-file te bekijken met less.
+	 	-s 		Allows you to look at your note file with the programm less.
 
-	 	-S 		Dit laat je toe al je gemaakte note-files te bekijken.
+	 	-S 		Lists all your note-files.
 
-	 	-d 		Dit verwijdert je note-file voorgoed.
+	 	-d 		Delete your note-file for good.

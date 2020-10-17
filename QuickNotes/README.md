@@ -11,7 +11,7 @@ run
 
 > ./qn_installer in your home directory
 
-I don't know why but on manjaro use
+I don't know why but on manjaro use (not yet tested)
 
 > sudo sh qn_installer your_login_name
 
@@ -22,7 +22,7 @@ or
 
 > ./qn_installer.sh in your home directory
 
-I don't know why but on manjaro use
+I don't know why but on manjaro use (not yet tested)
 
 > sudo sh qn_installer.sh your_login_name
 

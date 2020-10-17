@@ -7,9 +7,9 @@ the program for you!
 
 ### How to install
 run
-> sudo wget -O qn_installer https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn_installer.sh
+> sudo wget -O qn_installer https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn_installer.sh && sudo chown $USER:$USER qn_installer
 
-> sudo sh qn_installer
+> ./qn_installer in your home directory
 
 I don't know why but on manjaro use
 

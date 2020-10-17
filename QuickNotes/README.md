@@ -7,7 +7,7 @@ the program for you!
 
 ### How to install
 run
-> sudo wget -O qn_installer https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn_installer.sh && sudo chown $USER:$USER qn_installer
+> sudo wget -O /home/$USER/qn_installer https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn_installer.sh && sudo chown $USER:$USER /home/$USER/qn_installer && sudo chmod 755 /home/$USER/qn_installer
 
 > ./qn_installer in your home directory
 
@@ -18,9 +18,9 @@ I don't know why but on manjaro use
 
 or
 
-> sudo curl -LO https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn_installer.sh
+> sudo curl -LO https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn_installer.sh && sudo chown $USER:$USER /home/$USER/qn_installer.sh && sudo chmod 755 /home/$USER/qn_installer.sh
 
-> sudo sh qn_installer.sh
+> ./qn_installer.sh in your home directory
 
 I don't know why but on manjaro use
 
@@ -29,7 +29,7 @@ I don't know why but on manjaro use
 ## What happens
 A file /usr/local/bin/qn will be made. This file makes it all possible
 
-A folder ~/.QuickNotes will be created. This is where all your notes will be stored.
+A folder ~/.quickNotes will be created. This is where all your notes will be stored.
 
 The qn_installer(.sh) will be deleted after installation.
 

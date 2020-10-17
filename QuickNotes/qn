@@ -20,13 +20,13 @@ qn_show(){
 }
 
 qn_delete(){
-	echo -e "Are you sure you want to delete this note?  \n"
+	echo "Are you sure you want to delete this note?  \n"
 	rm -i $file
 }
 
 qn_new_edit(){
 	echo "========== [" $when "] ==========" >>  $tempfile
-	echo -e "\n" >> $tempfile
+	echo "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" > $file
 	nano $file
@@ -36,7 +36,7 @@ qn_new_edit(){
 qn_normal(){
 	echo "========== [" $when "] ==========" >>  $tempfile
 	nano $tempfile
-	echo -e >> $tempfile
+	echo "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" >  $file
 	rm $file"2" $tempfile

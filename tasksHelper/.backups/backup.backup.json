@@ -1,0 +1,40 @@
+{
+    "tasks": [
+        {
+            "id": 0,
+            "name": "Video's bekijken",
+            "class": "PMA",
+            "info": "Filmpjes 4,5,6 bekijken",
+            "date-due": "05/10/2020",
+            "days-left": "",
+            "importance": 5
+        },
+        {
+            "id": 1,
+            "name": "Video's bekijken",
+            "class": "JAVA",
+            "info": "Theorie video nog bekijken",
+            "date-due": "05/10/2020",
+            "days-left": "",
+            "importance": 6
+        },
+        {
+            "id": 2,
+            "name": "Video's bekijken",
+            "class": "WF",
+            "info": "Laatste theorie vid bekijken",
+            "date-due": "05/10/2020",
+            "days-left": "",
+            "importance": 5
+        },
+        {
+            "id": 3,
+            "name": "Oef afmaken",
+            "class": "JAVA",
+            "info": "Oef vorige les afmaken",
+            "date-due": "05/10/2020",
+            "days-left": "",
+            "importance": 7
+        }
+    ]
+}

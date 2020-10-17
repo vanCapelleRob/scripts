@@ -3,7 +3,7 @@
 #places the qn file in /usr/local/bin
 destPath="/usr/local/bin"
 
-sudo wget -O $destPath/qn https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn && sudo chmod 755 $destPath/qn && sudo chown $USER:$USER $destPath/qn && mkdir /home/$USER/.quickNotes && sudo wget -O $destPath/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/help && rm /home/$USER/qn_installer
+sudo wget -O $destPath/qn https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/qn && sudo chmod 755 $destPath/qn && sudo chown $USER:$USER $destPath/qn && mkdir /home/$USER/.quickNotes && sudo wget -O $destPath/.help  https://raw.githubusercontent.com/vanCapelleRob/scripts/master/QuickNotes/help && rm /home/$USER/qn_installer*
 
 
 #on manjaro, $USER changes to root, Ubuntu not.

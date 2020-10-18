@@ -1,8 +1,7 @@
-def main(jsonFile, backupJsonFile):
-    # TODO: clean up toString van tasks en app. 
+def main(jsonFile):
     _input = ''
     
-    app = App(jsonFile, backupJsonFile)
+    app = App(jsonFile)
 
     # start main loop
     while _input != 'q':
@@ -28,7 +27,6 @@ if __name__ == '__main__':
     from App import *
 
     # set json file with all tasks
-    jsonFile = '/home/webadmin/scripts/tasksHelper/tasks.json'
-    backupJsonFile = '/home/webadmin/scripts/taskHelper/.backups/backup.json'
+    jsonFile = os.environ['HOME'] + '/.tasks/containsAllTasks.json'
 
-    main(jsonFile, backupJsonFile)
+    main(jsonFile)

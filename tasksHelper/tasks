@@ -1,4 +1,5 @@
 #!/bin/sh
 clear
-python3 /home/webadmin/scripts/tasksHelper/main.py
+touch /home/$USER/.tasks/containsAllTasks.json
+&& python3 /usr/local/bin/.tasksCode/main.py
 clear

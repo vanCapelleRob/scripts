@@ -3,10 +3,9 @@ import os
 from Task import *
 
 class App:
-    def __init__(self, jf, bjf):
+    def __init__(self, jf):
         self.tasks = [] # list of Task
         self.JSONFile = jf
-        self.backupJSONFile = bjf
         
         self.fillTasks()
         self.lastId = self.getLastID()

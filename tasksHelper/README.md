@@ -24,3 +24,8 @@ A folder ~/.tasks will be created. This is where your task file will be stored.
 The tasksHelper_installer(.sh) will be deleted after installation.
 
 ### How it works
+Basically, just typing
+
+> tasks
+
+will open the python cli where you can quickly see, add, update, delete your to do list. A help file is on its way!

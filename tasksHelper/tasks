@@ -1,5 +1,5 @@
 #!/bin/sh
 clear
-[ ! -f /home/$USER/.tasks/containsAllTasks.json ] && touch /home/$USER/.tasks/containsAllTasks.json && echo " {\"tasks\": []} " >> /home/$USER/.tasks/containsAllTasks.json
+[ ! -f /home/$USER/.tasks/containsAllTasks.json ] && ( touch /home/$USER/.tasks/containsAllTasks.json ; echo " {\"tasks\": []} " >> /home/$USER/.tasks/containsAllTasks.json )
 python3 /usr/local/bin/.tasksCode/main.py
 clear

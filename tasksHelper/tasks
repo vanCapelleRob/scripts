@@ -1,5 +1,5 @@
 #!/bin/sh
 clear
 touch /home/$USER/.tasks/containsAllTasks.json
-&& python3 /usr/local/bin/.tasksCode/main.py
+python3 /usr/local/bin/.tasksCode/main.py
 clear

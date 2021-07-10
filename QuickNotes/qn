@@ -7,7 +7,7 @@ qn_help(){
 }
 
 qn_edit(){
-	nano $file
+	$EDITOR $file
 }
 
 qn_show_all(){
@@ -29,13 +29,13 @@ qn_new_edit(){
 	echo "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" > $file
-	nano $file
+	$EDITOR $file
 	rm $file"2" $tempfile
 }
 
 qn_normal(){
 	echo "========== [" $when "] ==========" >>  $tempfile
-	nano $tempfile
+	$EDITOR $tempfile
 	echo "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" >  $file

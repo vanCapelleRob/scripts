@@ -51,7 +51,7 @@ assign_dir(){
 
 ## main code ##
 # path=$qn_path
-path='~/.quickNotes'
+path='/home/'$USER'/.quickNotes'
 file=$path/$1
 tempfile=$path/$1.temp
 when=$(date +"%A-%d/%m/%Y-%H:%M")

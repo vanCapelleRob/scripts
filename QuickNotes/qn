@@ -2,7 +2,7 @@
 
 ## functions ##
 qn_help(){
-	less '/usr/local/bin/.help'
+	less '/usr/bin/.help'
 	exit
 }
 
@@ -51,7 +51,7 @@ assign_dir(){
 
 ## main code ##
 # path=$qn_path
-path='/home/'$USER'/.quickNotes'
+path='~/.quickNotes'
 file=$path/$1
 tempfile=$path/$1.temp
 when=$(date +"%A-%d/%m/%Y-%H:%M")

@@ -24,7 +24,7 @@ I don't know why but on manjaro use (not yet tested)
 > sudo sh qn_installer.sh your_login_name
 
 ## What happens
-A file /usr/local/bin/qn will be made. This file makes it all possible
+A file /usr/bin/qn will be made. This file makes it all possible
 
 A folder ~/.quickNotes will be created. This is where all your notes will be stored.
 

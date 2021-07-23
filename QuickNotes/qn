@@ -11,22 +11,32 @@ qn_edit(){
 }
 
 qn_show_all(){
-	ls $path
-	exit
+	if [ $(ls $path | wc -l) = 0 ]; then
+		echo "There are no notes yet."
+	else
+		ls $path
+	fi
 }
 
 qn_show(){
 	less $file
 }
 
+qn_delete_all() {
+	echo "Are you sure you want to delete ALL notes?"
+	printf "\n"
+	rm -r -I $path/*
+}
+
 qn_delete(){
-	echo "Are you sure you want to delete this note?  \n"
+	echo "Are you sure you want to delete this note?"
+	printf "\n"
 	rm -i $file
 }
 
 qn_new_edit(){
 	echo "========== [" $when "] ==========" >>  $tempfile
-	echo "\n" >> $tempfile
+	printf "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" > $file
 	$EDITOR $file
@@ -35,18 +45,18 @@ qn_new_edit(){
 
 qn_normal(){
 	echo "========== [" $when "] ==========" >>  $tempfile
+	printf "\n" >> $tempfile
 	$EDITOR $tempfile
-	echo "\n" >> $tempfile
 	cp $file $file"2"
 	cat $tempfile $file"2" >  $file
 	rm $file"2" $tempfile
 }
 
 assign_dir(){
-		mkdir $1 && 
-		cp ~/.bashrc $1 &&
-		echo "export qn_path=$1" >> ~/.bashrc &&
-		echo "Made dir $1, made a copy of .bashrc, and stored it in $1. And exported qn_path=$1 onto .bashrc"
+	mkdir $1 && 
+	cp ~/.bashrc $1 &&
+	echo "export qn_path=$1" >> ~/.bashrc &&
+	echo "Made dir $1, made a copy of .bashrc, and stored it in $1. And exported qn_path=$1 onto .bashrc"
 }
 
 ## main code ##
@@ -89,6 +99,10 @@ do
 			;;
 		-d)
 			action="delete"
+			;;
+		-D)
+			qn_delete_all
+			exit
 			;;
 		*)
 			file=$path/$i

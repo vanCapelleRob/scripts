@@ -50,49 +50,74 @@ assign_dir(){
 }
 
 ## main code ##
-# path=$qn_path
+
+#main variables
 path='/home/'$USER'/.quickNotes'
-file=$path/$1
 tempfile=$path/$1.temp
 when=$(date +"%A-%d/%m/%Y-%H:%M")
 
-if [ ! -z $1 ]; then
-	case $1 in
+#check if there are arguments
+if [ $# = 0 ]; then
+	echo "Give a filename"
+	exit
+fi
+
+#check what action must be performed
+action="normal"
+
+#loop over all arguments
+for i in $@
+do
+	case $i in
 		help)
 			qn_help
+			exit	
 			;;
 		-S)
 			qn_show_all
+			exit
 			;;
 		'-dir')
 			[ ! -d $2 ] && assign_dir $2 ||
 			echo 'dir already exists'
 			;;
-		*)
-			[ ! -f $path/$1  ] && touch $file
+		-e)	
+			action="edit"
 			;;
+		-ne)
+			action="new_edit"
+			;;
+		-d)
+			action="delete"
+			;;
+		*)
+			file=$path/$i
+			[ ! -f $path/$i  ] && touch $path/$i
+			;;		
 	esac
-else
+done
+
+#check if a file is mentioned
+if [ -z $file ]; then
 	echo "Give a filename"
 	exit
 fi
 
-
-if [ ! -f $2  ]; then
-	case $2 in
-		-e)
-			qn_edit $1
-			;;
-		-s)
-			qn_show $1
-			;;
-		-ne)
-			qn_new_edit $1
-			;;
-		-d)
-			qn_delete $1
-			;;
-	esac
-else
-	qn_normal $1
-fi
+#execute said action
+case $action in
+	normal)
+		qn_normal
+		;;
+	edit)
+		qn_edit
+		;;
+	new_edit)
+		qn_new_edit
+		;;
+	delete)
+		qn_delete
+		;;
+	*)
+		echo "Something went wrong"
+		;;
+esac

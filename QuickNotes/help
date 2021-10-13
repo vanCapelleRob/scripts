@@ -9,7 +9,7 @@ WHAT:
 		After that running 'qn first_note', you will be using the file u made the first time
 
 SYNTAX:
-		qn [FILE] [OPTION]
+		qn [FILE] [OPTION] or qn [OPTION] [FILE]
 		Only use 1 file at a time!
 
 OPTIONS: (also always use 1)
@@ -21,8 +21,8 @@ OPTIONS: (also always use 1)
 	 	-ne		This is a combination of No options and -e.
 	 	 		You can write a note and at the same time edit your whole note-file.
 
-	 	-s 		Allows you to look at your note file with the programm less.
-
 	 	-S 		Lists all your note-files.
 
 	 	-d 		Delete your note-file for good.
+
+		-D 		Delete all your note-files.

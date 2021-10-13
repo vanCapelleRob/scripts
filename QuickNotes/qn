@@ -14,7 +14,7 @@ qn_show_all(){
 	if [ $(ls $path | wc -l) = 0 ]; then
 		echo "There are no notes yet."
 	else
-		ls $path
+		ls -l $path
 	fi
 }
 
@@ -87,10 +87,10 @@ do
 			qn_show_all
 			exit
 			;;
-		'-dir')
-			[ ! -d $2 ] && assign_dir $2 ||
-			echo 'dir already exists'
-			;;
+		# '-dir')
+		# 	[ ! -d $2 ] && assign_dir $2 ||
+		# 	echo 'dir already exists'
+		# 	;;
 		-e)	
 			action="edit"
 			;;
